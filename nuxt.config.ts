@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
   ],
   ignore: [
-    '**/components/*.vue',
+    // 忽略 /pages/ 目录下所有文件夹的 components 目录
+    '**/pages/**/components/*.vue',
   ],
 
   postcss: {

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import DarkToggle from '~/components/DarkToggle.vue'
-</script>
-
 <template>
   <div class="text-xl m-5 flex flex-row justify-center gap-3">
     <DarkToggle />

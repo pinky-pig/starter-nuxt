@@ -1,5 +1,6 @@
 name: CI
 
+# 触发条件：推送到 main 分支或向 main 分支发起 pull request
 on:
   push:
     branches:
@@ -9,7 +10,9 @@ on:
     branches:
       - main
 
+# 任务
 jobs:
+  # 格式化代码
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -26,6 +29,7 @@ jobs:
       - name: Lint
         run: pnpm run lint
 
+  # 类型检查
   typecheck:
     runs-on: ubuntu-latest
     steps:
