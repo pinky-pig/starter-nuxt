@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" width="48.77" height="32" viewBox="0 0 256 168">
     <path
@@ -10,5 +6,3 @@
     />
   </svg>
 </template>
-
-<style scoped></style>

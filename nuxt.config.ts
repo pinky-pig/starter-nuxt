@@ -11,6 +11,10 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
   ],
+  ignore: [
+    '**/components/*.vue',
+  ],
+
   postcss: {
     plugins: {
       tailwindcss: {},
