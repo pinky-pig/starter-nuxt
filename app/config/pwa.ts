@@ -4,6 +4,12 @@ import { appDescription, appName } from '../constants/index'
 
 const scope = '/'
 
+/**
+ * nginx 部署静态文件的话，需要配置 nginx.conf 对 sw.js 的访问权限
+ * @see https://vite-pwa-org.netlify.app/deployment/nginx.html#cache-control
+ * demo: 看页面最下方
+ */
+
 export const pwa: ModuleOptions = {
   registerType: 'autoUpdate',
   scope,
@@ -77,3 +83,39 @@ export const pwa: ModuleOptions = {
     navigateFallback: scope,
   },
 }
+
+// server {
+//   listen       8081;
+//   server_name  localhost;
+
+//   # 项目地址
+//   root   dist;
+//   index  index.html index.htm;
+
+//     location / {
+//   try_files $uri $uri/ /index.html;
+//   add_header 'Access-Control-Allow-Origin' '*';
+//   add_header 'Access-Control-Allow-Headers' '*';
+//   add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+//     }
+
+//     # 确保处理静态文件，例如 JS、CSS、图片等
+//   location ~* \.(?:ico|css|js|woff2?|ttf|svg|png|jpg|jpeg|gif)$ {
+//   try_files $uri =404;
+//   expires 1y;
+//   access_log off;
+//   add_header Cache-Control "public, max-age=31536000, immutable";
+//   }
+
+//   # 处理 Service Worker 文件
+//   location /sw.js {
+//   try_files $uri =404;
+//   access_log off;
+//   add_header Cache-Control "no-cache";
+//   }
+
+//   error_page   500 502 503 504  /50x.html;
+//   location = /50x.html {
+//   root   /dist;
+//   }
+// }
