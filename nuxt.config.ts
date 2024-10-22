@@ -11,10 +11,13 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
   ],
-  ignore: [
-    // 忽略 /pages/ 目录下所有文件夹的 components 目录
-    '**/pages/**/components/*.vue',
-  ],
+
+  ignore: [],
+
+  generate: {
+    // 忽略 /pages/ 目录下所有文件夹的 components 目录生成约定式路由
+    exclude: ['**/pages/**/components/*.vue'],
+  },
 
   postcss: {
     plugins: {
