@@ -6,6 +6,23 @@ definePageMeta({
   layout: 'home',
 })
 const online = useOnline()
+
+onMounted(() => {
+  getDDStatus()
+})
+
+const ddFetchData = ref<{
+  is_run_daka_status: boolean
+  status: string
+  time: string
+}>()
+async function getDDStatus() {
+  const res = await $fetch('/api/dd', {
+    method: 'get',
+    query: { status: true },
+  })
+  ddFetchData.value = res
+}
 </script>
 
 <template>
@@ -34,6 +51,10 @@ const online = useOnline()
 
     <p>
       <em class="text-sm opacity-75">A simple template for Nuxt3.</em>
+    </p>
+
+    <p>
+      <em class="text-sm opacity-75">{{ ddFetchData?.time }}</em>
     </p>
 
     <TheFooter />
