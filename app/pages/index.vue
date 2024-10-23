@@ -1,3 +1,4 @@
+<!-- eslint-disable no-console -->
 <script setup lang="ts">
 import AppIcon from '~/components/layout/AppIcon.vue'
 import TheFooter from '~/components/layout/TheFooter.vue'
@@ -9,6 +10,7 @@ const online = useOnline()
 
 onMounted(() => {
   getDDStatus()
+  initWebsocket()
 })
 
 const ddFetchData = ref<{
@@ -22,6 +24,19 @@ async function getDDStatus() {
     query: { status: true },
   })
   ddFetchData.value = res
+}
+function initWebsocket() {
+  const ws = new WebSocket('ws://localhost:3000/api/websocket')
+  ws.onopen = () => {
+    console.log('Connected to WebSocket server')
+    ws.send('Hello from client')
+  }
+  ws.onmessage = (event) => {
+    console.log('Message from server: ', event.data)
+  }
+  ws.onclose = () => {
+    console.log('WebSocket connection closed')
+  }
 }
 </script>
 

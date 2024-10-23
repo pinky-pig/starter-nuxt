@@ -9,6 +9,8 @@ export default nuxt(
       rules: {
         'style/no-trailing-spaces': 'off',
         'format/prettier': 'off',
+        'no-restricted-globals': 'off',
+        'node/prefer-global/buffer': 'off',
       },
     },
 
