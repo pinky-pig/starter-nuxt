@@ -1,3 +1,7 @@
+/**
+ * Serverless 平台，主要设计用于处理 HTTP 请求，而 WebSocket 连接通常需要持续的、持久的连接。
+ * 所以要么是使用 Socket.io 这样的库，要么是升级 HTTP 连接为 WebSocket 连接。
+ */
 export default defineWebSocketHandler({
   // peer 是客户端的标识符，当客户端连接到服务器时，会自动生成一个唯一的标识符。
   open(peer) {
