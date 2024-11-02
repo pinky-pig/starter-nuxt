@@ -1,0 +1,7 @@
+html.dark{
+  --app-background: #070708;
+}
+
+html{
+  --app-background: #f8f8f7;
+}

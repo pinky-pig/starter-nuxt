@@ -12,6 +12,7 @@
     "start:generate": "npx serve .output/public",
     "up": "taze major -I",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
