@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nuxi build",
     "dev:pwa": "VITE_PLUGIN_PWA=true nuxi dev",
-    "dev": "nuxi dev",
+    "dev": "nuxi dev --host",
     "generate": "nuxi generate",
     "prepare": "nuxi prepare",
     "start": "node .output/server/index.mjs",
@@ -33,6 +33,7 @@
     "@unocss/eslint-config": "^0.63.4",
     "@vite-pwa/nuxt": "^0.10.5",
     "@vueuse/nuxt": "^11.1.0",
+    "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.0",
     "consola": "^3.2.3",

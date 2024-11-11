@@ -64,7 +64,10 @@ function initWebsocket() {
       Starter Nuxt3
     </h1>
 
-    <p>
+    <p 
+      style="animation-delay: 1s"
+      class="animate__animated animate__bounceInDown"
+    >
       <em class="text-sm opacity-75">A simple template for Nuxt3.</em>
     </p>
 
